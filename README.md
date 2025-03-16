@@ -10,3 +10,5 @@ There are two dynamic elements:
 
 Additional libraries used: 
 - [Haze](https://chrisbanes.github.io/haze/latest/) by Chris Banes to achieve the required blur in the message addition overlay.
+
+[Download apk](file /apk/app-debug.apk)
