@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Arya Messaging</string>
+
+    <string name="label_camera">Camera</string>
+    <string name="label_photos">Photos</string>
+    <string name="label_files">Files</string>
+    <string name="label_audio">Audio</string>
+
+    <string name="placeholder_message">Message</string>
+
+    <string name="content_description_seen">Message has been read</string>
+    <string name="content_description_attach_media">Attach media</string>
+    <string name="content_description_send">Send message</string>
+    <string name="content_description_back_button">Back button</string>
+    <string name="content_description_users_avatar">User\'s Avatar</string>
+</resources>
