@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -37,28 +38,32 @@ fun AttachMenuView(
 ) = Column(
     verticalArrangement = Arrangement.Bottom,
     modifier = modifier
-        .clickable { close() }
-        .padding(bottom = 80.dp, start = 32.dp, end = 32.dp, top = 32.dp)
+        .clickable() { close() }
+        .padding(bottom = 80.dp, start = 24.dp, end = 24.dp, top = 32.dp)
 ) {
     MenuItem(
         iconRes = R.drawable.ic_camera,
         labelRes = R.string.label_camera,
         color = AlloyGradient,
+        click = { /*TODO*/ },
     )
     MenuItem(
         iconRes = R.drawable.ic_photos,
         labelRes = R.string.label_photos,
         color = SunshineGradient,
+        click = { /*TODO*/ },
     )
     MenuItem(
         iconRes = R.drawable.ic_files,
         labelRes = R.string.label_files,
         color = GreenBeachGradient,
+        click = { /*TODO*/ },
     )
     MenuItem(
         iconRes = R.drawable.ic_audio,
         labelRes = R.string.label_audio,
         color = PlumGradient,
+        click = { /*TODO*/ },
     )
 }
 
@@ -67,16 +72,19 @@ private fun MenuItem(
     @DrawableRes iconRes: Int,
     @StringRes labelRes: Int,
     color: Brush,
+    click: () -> Unit,
 ) = Row(
     verticalAlignment = Alignment.CenterVertically,
-    modifier = Modifier.padding(bottom = 16.dp)
+    modifier = Modifier
+        .clickable { click() }
+        .padding(8.dp)
+        .fillMaxWidth()
 ) {
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(20.dp))
             .background(color)
     ) {
-
         Image(
             painter = painterResource(iconRes),
             contentDescription = "Camera icon",

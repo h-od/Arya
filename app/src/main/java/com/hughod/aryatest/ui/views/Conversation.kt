@@ -44,7 +44,9 @@ fun ConversationScreen(state: State) = Box {
 
     Scaffold(
         topBar = { ConversationTopBarView(state.user.avatar, state.user.name) },
-        bottomBar = { MessageBarView({}, { showMenu = true }) },
+        bottomBar = {
+            MessageBarView(showMenu, {}, { showMenu = true })
+        },
         modifier = Modifier
             .fillMaxSize()
             .imePadding()

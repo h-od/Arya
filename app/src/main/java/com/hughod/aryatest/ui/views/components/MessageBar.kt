@@ -38,6 +38,7 @@ import com.hughod.aryatest.ui.theme.composeMessageFieldColors
 
 @Composable
 fun MessageBarView(
+    showingMenu: Boolean,
     send: (String) -> Unit,
     attach: () -> Unit,
 ) = Row(
@@ -69,6 +70,7 @@ fun MessageBarView(
         shape = RoundedCornerShape(32.dp),
         colors = composeMessageFieldColors(),
         maxLines = 2,
+        enabled = !showingMenu,
         keyboardOptions = KeyboardOptions.Default.copy(
             capitalization = KeyboardCapitalization.Sentences,
             keyboardType = KeyboardType.Text,
@@ -101,4 +103,4 @@ fun MessageBarView(
 
 @Preview
 @Composable
-private fun MessageBarPreview() = MessageBarView({}, {})
+private fun MessageBarPreview() = MessageBarView(false, {}, {})
